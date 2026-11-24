@@ -1,0 +1,18 @@
+{
+  "source": "// preview\nconst MAX = 10;\ntype Money { cents: Int }\nfn total(items: List) -> Int | Error {\n    let sum = 0;\n    for item in items { sum = sum + item.cents; }\n    log::info(f\"sum: {sum}\");\n    ret Color::Red;\n}\n",
+  "highlight": [
+    { "text": "// preview", "scope": "Comment" },
+    { "text": "fn", "scope": "Keyword" },
+    { "text": "total", "scope": "Function" },
+    { "text": "items", "scope": "Variable" },
+    { "text": "Money", "scope": "Type" },
+    { "text": "cents", "scope": "Property" },
+    { "text": "10", "scope": "Number" },
+    { "text": "log", "scope": "Function" },
+    { "text": "info", "scope": "Function" },
+    { "text": "::", "scope": "Punctuation" },
+    { "text": "sum: ", "scope": "String" },
+    { "text": "Error", "scope": "Type" },
+    { "text": "ret", "scope": "Keyword" }
+  ]
+}

@@ -1,0 +1,6 @@
+dist/
+verify/target/
+tree-sitter-exs/*.wasm
+tree-sitter-exs/build/
+*.so
+*.dylib

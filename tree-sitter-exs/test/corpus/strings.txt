@@ -1,0 +1,135 @@
+================================================================================
+Plain, byte and escaped strings
+================================================================================
+
+let a = "x\n\"y\" \u{1F600}";
+let b = b"bytes";
+let c = "// not a comment";
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (let_binding
+    (identifier))
+  (operator)
+  (string
+    (string_content)
+    (escape_sequence)
+    (escape_sequence)
+    (string_content)
+    (escape_sequence)
+    (string_content)
+    (escape_sequence))
+  (punctuation)
+  (let_binding
+    (identifier))
+  (operator)
+  (string
+    (string_content))
+  (punctuation)
+  (let_binding
+    (identifier))
+  (operator)
+  (string
+    (string_content))
+  (punctuation))
+
+================================================================================
+Formatted string with interpolation and brace escapes
+================================================================================
+
+f"{{x}} = {user["name"]} {obj.len()} { {a: 1} }"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (formatted_string
+    (brace_escape)
+    (string_content)
+    (brace_escape)
+    (string_content)
+    (interpolation
+      (identifier)
+      (punctuation)
+      (string
+        (string_content))
+      (punctuation))
+    (string_content)
+    (interpolation
+      (identifier)
+      (method_call
+        (identifier))
+      (punctuation))
+    (string_content)
+    (interpolation
+      (block
+        (object_key
+          (identifier))
+        (number)))))
+
+================================================================================
+Escaped quotes inside interpolation
+================================================================================
+
+f"{user[\"name\"]}"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (formatted_string
+    (interpolation
+      (identifier)
+      (punctuation)
+      (escaped_string)
+      (punctuation))))
+
+================================================================================
+Raw strings with hashes
+================================================================================
+
+r#"say "hi""#;
+d##"
+    a "# b
+"##;
+r#""#;
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (raw_string
+    (raw_string_content))
+  (punctuation)
+  (raw_string
+    (raw_string_content))
+  (punctuation)
+  (raw_string)
+  (punctuation))
+
+================================================================================
+Formatted raw strings
+================================================================================
+
+f#"x {a} {{y}} "q""#;
+fd#"
+  {name}
+"#;
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (formatted_raw_string
+    (raw_string_content)
+    (interpolation
+      (identifier))
+    (raw_string_content)
+    (brace_escape)
+    (raw_string_content)
+    (brace_escape)
+    (raw_string_content))
+  (punctuation)
+  (formatted_raw_string
+    (raw_string_content)
+    (interpolation
+      (identifier))
+    (raw_string_content))
+  (punctuation))

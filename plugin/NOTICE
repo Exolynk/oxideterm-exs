@@ -1,0 +1,9 @@
+ExS Language Support for OxideTerm
+Copyright 2026 Exolynk
+
+The tree-sitter grammar, external scanner and highlight queries for
+ExS (Exolynk Xtension Script) are original work, licensed under the MIT License.
+Source: tree-sitter-exs/ in this repository.
+
+ExS itself is developed at https://github.com/Exolynk/exs (MIT License).
+This package contains no ExS compiler or runtime code.

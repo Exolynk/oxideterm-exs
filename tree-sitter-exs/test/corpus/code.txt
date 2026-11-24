@@ -1,0 +1,83 @@
+================================================================================
+Function definition, calls, paths and members
+================================================================================
+
+/// Doc
+fn main(input: Int) -> Unit | Error {
+    let x = std::math::max(1, 2.5e3) + 7.abs();
+    ret Color::Red;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (line_comment)
+  (function_definition
+    (identifier)
+    (parameters
+      (parameter
+        (identifier))
+      (punctuation)
+      (parameter
+        (identifier))))
+  (operator)
+  (unit)
+  (operator)
+  (builtin_type)
+  (let_binding
+    (identifier))
+  (operator)
+  (scoped_call
+    (scoped_identifier
+      (identifier)
+      (identifier)
+      (identifier)))
+  (number)
+  (punctuation)
+  (number)
+  (punctuation)
+  (operator)
+  (number)
+  (method_call
+    (identifier))
+  (punctuation)
+  (punctuation)
+  (keyword)
+  (scoped_identifier
+    (identifier)
+    (identifier))
+  (punctuation))
+
+================================================================================
+Ranges, closures and literals
+================================================================================
+
+for i in 0..=10 { par (v) => v * 2; }
+/* block
+   comment */
+true false None reserved async
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (keyword)
+  (identifier)
+  (keyword)
+  (number)
+  (operator)
+  (number)
+  (keyword)
+  (punctuation)
+  (identifier)
+  (punctuation)
+  (operator)
+  (identifier)
+  (operator)
+  (number)
+  (punctuation)
+  (block_comment)
+  (boolean)
+  (boolean)
+  (none)
+  (identifier)
+  (reserved_word))

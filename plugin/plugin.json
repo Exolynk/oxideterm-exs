@@ -1,0 +1,35 @@
+{
+  "id": "com.exolynk.language.exs",
+  "name": "ExS Language Support",
+  "version": "0.1.0",
+  "description": "Syntax highlighting for ExS (Exolynk Xtension Script) .exs files. ExS is an open-source extension language that compiles scripts to sandboxed WebAssembly: https://github.com/Exolynk/exs",
+  "author": "Exolynk",
+  "license": "MIT",
+  "repository": "https://github.com/Exolynk/oxideterm-exs",
+  "tags": [
+    "language",
+    "exs",
+    "exolynk",
+    "scripting-language",
+    "wasm"
+  ],
+  "runtime": {
+    "kind": "language",
+    "entry": "parser.wasm"
+  },
+  "contributes": {
+    "language": {
+      "id": "exs",
+      "displayName": "ExS",
+      "grammarName": "exs",
+      "extensions": [
+        "exs"
+      ],
+      "fileNames": [],
+      "highlights": "highlights.scm"
+    }
+  },
+  "engines": {
+    "oxideterm": ">=2.2.2"
+  }
+}
